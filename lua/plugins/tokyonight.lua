@@ -24,7 +24,6 @@ return {
       vim.cmd("highlight CursorLine guibg=#101010") -- Línea del cursor en gris oscuro
       vim.cmd("highlight CursorLineNr guifg=#FFFFFF guibg=#101010") -- Números resaltados
       vim.cmd("highlight VertSplit guifg=#101010 guibg=#000000")
-
     end,
   }  
 }
