@@ -27,11 +27,18 @@ return {
         settings = {
           pylsp = {
             plugins = {
-              pycodestyle = { maxLineLength = 88 },
+              -- Desactiva pycodestyle para evitar conflictos con Ruff
+              pycodestyle = { enabled = false },
+              flake8 = { enabled = false },
+              -- Activa Ruff como el linter principal
+              ruff = {
+                enabled = true,
+                extendSelect = { "I" }, -- Opcional: Agrega reglas adicionales, por ejemplo, convenciones de importación
+              },
             },
           },
         },
-      }) -- Python
+      }) 
       lsp.configure("ts_ls", {
         settings = {
           javascript = {

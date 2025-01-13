@@ -56,8 +56,10 @@ vim.api.nvim_set_keymap('v', '<BS>', 'd', { noremap = true, silent = true })
 -- Movimiento básico con WASD
 vim.api.nvim_set_keymap('n', 'w', 'k', { noremap = true, silent = true }) -- Arriba
 vim.api.nvim_set_keymap('n', 's', 'j', { noremap = true, silent = true }) -- Abajo
-vim.api.nvim_set_keymap('n', 'a', 'h', { noremap = true, silent = true }) -- Izquierda
-vim.api.nvim_set_keymap('n', 'd', 'l', { noremap = true, silent = true }) -- Derecha
+vim.api.nvim_set_keymap('n', 'a', 'b', { noremap = true, silent = true }) -- Izquierda
+vim.api.nvim_set_keymap('n', 'd', 'w', { noremap = true, silent = true }) -- Derecha
+vim.api.nvim_set_keymap('n', 'A', '[{', { noremap = true, silent = true }) -- Saltar al bloque de código anterior
+vim.api.nvim_set_keymap('n', 'D', ']}', { noremap = true, silent = true }) -- Saltar al bloque de código siguiente
 
 
 -- Movimiento visual con WASD
