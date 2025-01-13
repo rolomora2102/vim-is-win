@@ -22,7 +22,16 @@ return {
       local lsp = require("lsp-zero").preset("recommended")
 
       -- Configuración adicional para servidores específicos
-      lsp.configure("pyright", {}) -- Python
+      lsp.configure("pylsp", {
+        cmd = { "pylsp" }, -- Este comando debe coincidir con el ejecutable en tu PATH
+        settings = {
+          pylsp = {
+            plugins = {
+              pycodestyle = { maxLineLength = 88 },
+            },
+          },
+        },
+      }) -- Python
       lsp.configure("ts_ls", {
         settings = {
           javascript = {
