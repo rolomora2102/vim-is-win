@@ -41,6 +41,8 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.syntax = "on"
 vim.opt.lazyredraw = true
 
+vim.o.autoindent = true -- Activa la autoindentación
+vim.o.smartindent = true -- Activa la indentación inteligente-
 -- Configuración de backups y swap
 vim.opt.backup = false
 vim.opt.writebackup = false

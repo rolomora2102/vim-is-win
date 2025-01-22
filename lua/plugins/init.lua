@@ -5,5 +5,6 @@ return {
   require("plugins.harpoon"),
   require("plugins.tokyonight"),
   require("plugins.undotree"),
-  require("plugins.fugitive")
+  require("plugins.fugitive"),
+  require("plugins.cop"),
 }

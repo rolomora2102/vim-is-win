@@ -1,5 +1,5 @@
 return {
-  -- Plugin principal: lsp-zero.nvim
+
   {
     "VonHeikemen/lsp-zero.nvim",
     branch = "v2.x",
@@ -39,7 +39,20 @@ return {
           },
         },
       }) 
-      lsp.configure("ts_ls", {
+     lsp.configure("sqls", {
+          settings = {
+              sqls = {
+                  connections = {
+                     {
+                        driver = 'mysql',
+                        dataSourceName = 'rolo:Admin_123@tcp(127.0.0.1:3306)/hello_mysql',
+                    },
+                },
+            },
+        }
+      })
+
+     lsp.configure("ts_ls", {
         settings = {
           javascript = {
             suggest = {
@@ -49,6 +62,15 @@ return {
         },
       }) -- TypeScript/JavaScript
 
+      lsp.configure("cssls", {
+          settings = {
+            css = { validate = true },
+          }
+      })
+    
+      lsp.configure("html", {
+          settings = {},
+      })
       -- Configuración para autocompletado
       local cmp = require("cmp")
       local cmp_select = { behavior = cmp.SelectBehavior.Select }

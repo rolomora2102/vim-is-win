@@ -11,6 +11,23 @@ return {
         end,
       },
       {
+      'kristijanhusak/vim-dadbod-ui',
+      dependencies = {
+        { 'tpope/vim-dadbod', lazy = true },
+        { 'kristijanhusak/vim-dadbod-completion', ft = { 'sql', 'mysql', 'plsql' }, lazy = true }, -- Optional
+      },
+      cmd = {
+        'DBUI',
+        'DBUIToggle',
+        'DBUIAddConnection',
+        'DBUIFindBuffer',
+      },        
+      config = function()
+          -- Opciones opcionales de configuración
+          vim.g.db_ui_save_location = '~/.config/nvim/sql_dbs'
+        end
+      },
+      {
         "CRAG666/code_runner.nvim",
         dependencies = "nvim-lua/plenary.nvim",
         config = function()
