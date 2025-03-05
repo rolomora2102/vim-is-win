@@ -23,8 +23,15 @@ return {
         'DBUIFindBuffer',
       },        
       config = function()
-          -- Opciones opcionales de configuración
-          vim.g.db_ui_save_location = '~/.config/nvim/sql_dbs'
+        -- Opciones opcionales de configuración
+        vim.g.db_ui_save_location = '~/.config/nvim/sql_dbs'
+        vim.g.db_ui_auto_execute_table_helpers = 1
+        vim.api.nvim_create_autocmd("FileType", {
+              pattern = { "dbui", "dbout" },
+              callback = function()
+                vim.opt_local.wrap = false -- Desactiva el wrapping de líneas
+              end,
+            })
         end
       },
       {
